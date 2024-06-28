@@ -1,0 +1,353 @@
+{
+	"connections": [
+		{
+			"from": "voronoi2",
+			"from_port": 1,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "fast_blur",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "fast_blur_2",
+			"to_port": 0
+		},
+		{
+			"from": "fast_blur_2",
+			"from_port": 0,
+			"to": "math_2",
+			"to_port": 0
+		},
+		{
+			"from": "math",
+			"from_port": 0,
+			"to": "math_2",
+			"to_port": 1
+		},
+		{
+			"from": "fast_blur",
+			"from_port": 0,
+			"to": "math_3",
+			"to_port": 0
+		},
+		{
+			"from": "math_3",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 1
+		},
+		{
+			"from": "math_2",
+			"from_port": 0,
+			"to": "multi_warp",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "multi_warp",
+			"to_port": 1
+		},
+		{
+			"from": "multi_warp",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_2",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 1
+		},
+		{
+			"from": "warp",
+			"from_port": 0,
+			"to": "colorize_2",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@@872",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 0,
+				"y": 0
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 11,
+				"sss": 1
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "voronoi2",
+			"node_position": {
+				"x": -809.050415,
+				"y": -87.246521
+			},
+			"parameters": {
+				"intensity": 1,
+				"randomness": 0.85,
+				"scale_x": 16,
+				"scale_y": 16,
+				"stretch_x": 1,
+				"stretch_y": 1
+			},
+			"seed_int": 0,
+			"type": "voronoi2"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -481.397766,
+				"y": -174.924744
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 3,
+					"points": [
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 0,
+							"r": 1
+						},
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0.051719,
+							"r": 0
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "fast_blur",
+			"node_position": {
+				"x": -390.639191,
+				"y": 142.059723
+			},
+			"parameters": {
+				"param0": 12,
+				"param1": 27,
+				"param2": 1,
+				"param3": 1
+			},
+			"seed_int": 0,
+			"type": "fast_blur"
+		},
+		{
+			"name": "math",
+			"node_position": {
+				"x": -426.019623,
+				"y": 327.535706
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 0,
+				"op": 0
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "fast_blur_2",
+			"node_position": {
+				"x": -743.648071,
+				"y": 251.977814
+			},
+			"parameters": {
+				"param0": 10,
+				"param1": 10,
+				"param2": 1,
+				"param3": 1
+			},
+			"seed_int": 0,
+			"type": "fast_blur"
+		},
+		{
+			"name": "math_2",
+			"node_position": {
+				"x": -482.627441,
+				"y": 471.298828
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 0,
+				"op": 0
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "math_3",
+			"node_position": {
+				"x": -73.292725,
+				"y": 290.539429
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 2.41,
+				"op": 2
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "multi_warp",
+			"node_position": {
+				"x": -61.366943,
+				"y": 760.180359
+			},
+			"parameters": {
+				"param0": 10,
+				"param1": 0.423,
+				"param2": 14,
+				"param3": 1
+			},
+			"seed_int": 0,
+			"type": "multi_warp"
+		},
+		{
+			"name": "fbm2",
+			"node_position": {
+				"x": -478.494659,
+				"y": 723.737305
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.5,
+				"scale_x": 13,
+				"scale_y": 13
+			},
+			"seed_int": 0,
+			"type": "fbm2"
+		},
+		{
+			"name": "fbm2_2",
+			"node_position": {
+				"x": -400.795959,
+				"y": 1020.119751
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.5,
+				"scale_x": 7,
+				"scale_y": 7
+			},
+			"seed_int": 0,
+			"type": "fbm2"
+		},
+		{
+			"name": "warp",
+			"node_position": {
+				"x": -17.976625,
+				"y": 943.830322
+			},
+			"parameters": {
+				"amount": 0.035,
+				"eps": 0.1,
+				"mode": 0
+			},
+			"seed_int": 0,
+			"type": "warp"
+		},
+		{
+			"name": "colorize_2",
+			"node_position": {
+				"x": 260.461212,
+				"y": 890.127319
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 0.584314,
+							"b": 1,
+							"g": 0.376471,
+							"pos": 0.048283,
+							"r": 0.415686
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 0.784314,
+							"pos": 0.486643,
+							"r": 0.811765
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 1,
+							"r": 1
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

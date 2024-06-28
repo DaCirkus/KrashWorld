@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/textures/slider_grabber.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/grabber_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/slider_bg.png" type="Texture" id=3]
+[ext_resource path="res://ui/standard_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/dynamic/title_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ui/pages/options/options.gd" type="Script" id=6]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 130, 32 )
+margin_left = 9.0
+margin_right = 9.33882
+
+[sub_resource type="StyleBoxTexture" id=2]
+margin_left = 9.0
+margin_right = 9.0
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.278431 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 155.0
+margin_right = 300.0
+margin_bottom = 197.0
+custom_fonts/font = ExtResource( 5 )
+text = "OPtions"
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+margin_top = 213.0
+margin_right = 300.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.419608 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 231.0
+margin_right = 300.0
+margin_bottom = 369.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 31.0
+text = "Master volume"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 35.0
+margin_right = 300.0
+margin_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 4
+custom_icons/grabber_disabled = ExtResource( 1 )
+custom_icons/grabber_highlight = ExtResource( 1 )
+custom_icons/grabber = ExtResource( 2 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 2 )
+max_value = 200.0
+value = 24.0
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_top = 71.0
+margin_right = 300.0
+margin_bottom = 102.0
+text = "Music volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 106.0
+margin_right = 300.0
+margin_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 4
+custom_icons/grabber_disabled = ExtResource( 1 )
+custom_icons/grabber_highlight = ExtResource( 1 )
+custom_icons/grabber = ExtResource( 2 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 2 )
+max_value = 200.0
+value = 24.0
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+margin_top = 385.0
+margin_right = 300.0
+margin_bottom = 387.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.419608 )
+
+[node name="MainMenu" parent="VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 403.0
+margin_right = 300.0
+margin_bottom = 444.0
+size_flags_horizontal = 1
+
+[node name="TextureRect" parent="VBoxContainer/MainMenu/Scaler" index="0"]
+rect_min_size = Vector2( 300, 41 )
+
+[node name="Label" parent="VBoxContainer/MainMenu/Scaler/TextureRect/MarginContainer" index="0"]
+margin_right = 300.0
+text = "Main menu"
+
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
+
+[editable path="VBoxContainer/MainMenu"]

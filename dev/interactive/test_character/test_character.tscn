@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://systems/phantom_camera/phantom_camera_host_3d.gd" type="Script" id=1]
+[ext_resource path="res://systems/character/character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://dev/interactive/test_character/test_character.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.83677, 0 )
+material_override = SubResource( 1 )
+use_collision = true
+width = 49.828
+depth = 38.9698
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.857975, -0.261618, 0.442081, 0.0358774, 0.889012, 0.456477, -0.512438, -0.375785, 0.772136, 0, 0, 23.6169 )
+shadow_enabled = true
+
+[node name="KinematicBody" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera" type="Camera" parent="."]
+current = true
+
+[node name="PhantomCameraHost3D" type="Node" parent="Camera"]
+script = ExtResource( 1 )

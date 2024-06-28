@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/scenes/forest_scene_01/forest_scene_01_optimized.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scenes/forest_scene_01/forest_scene_01.gd" type="Script" id=2]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="forest_scene_01_optimized" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -371.504, 0 )

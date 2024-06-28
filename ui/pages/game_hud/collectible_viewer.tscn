@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/dynamic/normal_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/textures/cd_icon.png" type="Texture" id=2]
+[ext_resource path="res://ui/pages/game_hud/collectible_viewer.gd" type="Script" id=3]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.560976, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 0.833333, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer"]
+margin_right = 165.0
+margin_bottom = 50.0
+mouse_filter = 2
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 165.0
+margin_bottom = 50.0
+mouse_filter = 2
+custom_constants/margin_right = -30
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+modulate = Color( 1, 1, 1, 0.239216 )
+margin_right = 195.0
+margin_bottom = 50.0
+mouse_filter = 2
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 165.0
+margin_bottom = 50.0
+mouse_filter = 2
+
+[node name="CollectibleIcon" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 54.0
+margin_top = 9.0
+margin_right = 135.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+text = "4 / 60"

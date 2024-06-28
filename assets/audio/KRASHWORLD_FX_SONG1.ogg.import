@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/KRASHWORLD_FX_SONG1.ogg-35909c35d16e556bfc274f98f432b7e9.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/KRASHWORLD_FX_SONG1.ogg"
+dest_files=[ "res://.import/KRASHWORLD_FX_SONG1.ogg-35909c35d16e556bfc274f98f432b7e9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

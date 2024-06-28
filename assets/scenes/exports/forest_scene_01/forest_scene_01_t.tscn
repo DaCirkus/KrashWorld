@@ -1,0 +1,344 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/scenes/exports/forest_scene_01/forest_scene_01_optimized.tscn" type="PackedScene" id=1]
+[ext_resource path="res://systems/phantom_camera/phantom_camera_host_3d.gd" type="Script" id=2]
+[ext_resource path="res://systems/collectible/collectible.tscn" type="PackedScene" id=3]
+[ext_resource path="res://systems/character/character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://systems/level_finish_npc/level_finish_npc.tscn" type="PackedScene" id=6]
+[ext_resource path="res://systems/phantom_camera/phantom_camera_3d.gd" type="Script" id=7]
+[ext_resource path="res://assets/scenes/exports/forest_scene_01/TitleLayer.gd" type="Script" id=8]
+[ext_resource path="res://assets/textures/krashworld_logo.png" type="Texture" id=9]
+[ext_resource path="res://ui/standard_button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/textures/play_button.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleLayer/ColorRect:anchor_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleLayer/ColorRect:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TitleLayer/ColorRect/HBoxContainer/MarginContainer/TextureRect:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TitleLayer/ColorRect:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TitleLayer/ColorRect:anchor_top")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TitleLayer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "game_start"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleLayer/ColorRect:anchor_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleLayer/ColorRect:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TitleLayer/ColorRect:anchor_bottom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TitleLayer/ColorRect:anchor_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TitleLayer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "title"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleLayer/ColorRect:anchor_bottom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.1, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleLayer/ColorRect:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -1.0, 0.1, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TitleLayer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[node name="Spatial" type="Spatial"]
+
+[node name="forest_scene_01_optimized" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -371.718, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.2999, 2.89396 )
+far = 300.0
+
+[node name="PhantomCameraHost3D" type="Node" parent="Camera"]
+script = ExtResource( 2 )
+
+[node name="Collectibles" type="Spatial" parent="."]
+visible = false
+
+[node name="collectible" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5034e-06, -1.18718, 34.4788 )
+
+[node name="collectible6" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.475, -1.18718, 28.2305 )
+
+[node name="collectible23" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.64402, -1.18718, -40.0898 )
+
+[node name="collectible35" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.3545, -1.18718, -13.2832 )
+
+[node name="collectible42" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.6182, -1.18718, 21.2859 )
+
+[node name="collectible51" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.714, -1.18718, 46.5641 )
+
+[node name="collectible60" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.7695, 1.42543, 65.5519 )
+
+[node name="collectible68" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.1397, -1.32838, 94.2068 )
+
+[node name="collectible75" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -118.83, -1.32838, 52.9718 )
+
+[node name="collectible101" parent="Collectibles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4911, -1.1518, -88.0307 )
+
+[node name="Character" parent="." instance=ExtResource( 5 )]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.505, -2.467, 31.468 )
+visible = false
+
+[node name="LevelFinishNPC" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2237, -2.02184, 30.4839 )
+visible = false
+
+[node name="TitleCamera" type="Camera" parent="."]
+unique_name_in_owner = true
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -16.7831, -0.829, 36.3851 )
+visible = false
+current = true
+size = 0.063
+script = ExtResource( 7 )
+priority = 2
+
+[node name="TitleLayer" type="CanvasLayer" parent="."]
+layer = -2
+script = ExtResource( 8 )
+
+[node name="ColorRect" type="Control" parent="TitleLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleLayer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleLayer/ColorRect/HBoxContainer"]
+margin_right = 656.0
+margin_bottom = 600.0
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/margin_right = 150
+custom_constants/margin_top = 150
+custom_constants/margin_left = 150
+custom_constants/margin_bottom = 150
+
+[node name="TextureRect" type="TextureRect" parent="TitleLayer/ColorRect/HBoxContainer/MarginContainer"]
+margin_left = 150.0
+margin_top = 150.0
+margin_right = 506.0
+margin_bottom = 450.0
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="TitleLayer/ColorRect/HBoxContainer"]
+margin_left = 660.0
+margin_right = 1000.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.44
+custom_constants/margin_right = 100
+custom_constants/margin_top = 40
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleLayer/ColorRect/HBoxContainer/MarginContainer2"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 240.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+alignment = 1
+
+[node name="PlayButton" parent="TitleLayer/ColorRect/HBoxContainer/MarginContainer2/VBoxContainer" instance=ExtResource( 10 )]
+margin_top = 220.0
+margin_right = 200.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 200, 80 )
+size_flags_horizontal = 4
+
+[node name="TextureRect" parent="TitleLayer/ColorRect/HBoxContainer/MarginContainer2/VBoxContainer/PlayButton/Scaler" index="0"]
+rect_min_size = Vector2( 200, 80 )
+
+[node name="StandardBackground" parent="TitleLayer/ColorRect/HBoxContainer/MarginContainer2/VBoxContainer/PlayButton/Scaler/TextureRect" index="0"]
+visible = false
+
+[node name="MarginContainer" parent="TitleLayer/ColorRect/HBoxContainer/MarginContainer2/VBoxContainer/PlayButton/Scaler/TextureRect" index="1"]
+visible = false
+
+[node name="Label" parent="TitleLayer/ColorRect/HBoxContainer/MarginContainer2/VBoxContainer/PlayButton/Scaler/TextureRect/MarginContainer" index="0"]
+margin_right = 200.0
+margin_bottom = 80.0
+
+[node name="Texture" parent="TitleLayer/ColorRect/HBoxContainer/MarginContainer2/VBoxContainer/PlayButton/Scaler/TextureRect" index="2"]
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+playback_default_blend_time = 0.3
+anims/RESET = SubResource( 5 )
+anims/game_start = SubResource( 3 )
+anims/title = SubResource( 4 )
+
+[node name="Camera2" type="Camera" parent="."]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 0, 26.4186 )
+current = true
+far = 300.0
+
+[connection signal="pressed" from="TitleLayer/ColorRect/HBoxContainer/MarginContainer2/VBoxContainer/PlayButton" to="TitleLayer" method="_on_PlayButton_pressed"]
+
+[editable path="TitleLayer/ColorRect/HBoxContainer/MarginContainer2/VBoxContainer/PlayButton"]

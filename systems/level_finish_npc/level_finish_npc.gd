@@ -1,0 +1,3 @@
+extends KinematicBody
+
+class_name LevelFinishNPC

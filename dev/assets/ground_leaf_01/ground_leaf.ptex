@@ -1,0 +1,189 @@
+{
+	"connections": [
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 0
+		},
+		{
+			"from": "math",
+			"from_port": 0,
+			"to": "auto_tones",
+			"to_port": 0
+		},
+		{
+			"from": "auto_tones",
+			"from_port": 0,
+			"to": "tiler",
+			"to_port": 0
+		},
+		{
+			"from": "tiler",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "tiler",
+			"from_port": 0,
+			"to": "normal_map2",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "322",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 0,
+				"y": 0
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 11,
+				"sss": 1
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "image",
+			"node_position": {
+				"x": -1267.915283,
+				"y": -159.427307
+			},
+			"parameters": {
+				"clamp": false,
+				"fix_ar": false,
+				"image": "%PROJECT_PATH%/ground_leaf_01.png"
+			},
+			"seed_int": 0,
+			"type": "image"
+		},
+		{
+			"name": "tiler",
+			"node_position": {
+				"x": -951.766418,
+				"y": -367.0177
+			},
+			"parameters": {
+				"fixed_offset": 0,
+				"inputs": 0,
+				"offset": 1,
+				"overlap": 8,
+				"rotate": 180,
+				"scale": 0.72,
+				"scale_x": 0.1,
+				"scale_y": 0.1,
+				"tx": 32,
+				"ty": 32,
+				"value": 1,
+				"variations": false
+			},
+			"seed_int": 842493248,
+			"type": "tiler"
+		},
+		{
+			"name": "math",
+			"node_position": {
+				"x": -1204.599243,
+				"y": 48.369701
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 0,
+				"op": 0
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "auto_tones",
+			"node_position": {
+				"x": -870.792297,
+				"y": 80.521729
+			},
+			"parameters": {
+				"param0": 10
+			},
+			"seed_int": 0,
+			"type": "auto_tones"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -510.05835,
+				"y": -386.272339
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0.26525,
+							"pos": 0.660295,
+							"r": 0.006546
+						},
+						{
+							"a": 1,
+							"b": 0.260547,
+							"g": 0.775917,
+							"pos": 1,
+							"r": 0
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "normal_map2",
+			"node_position": {
+				"x": -384.660278,
+				"y": -257.164581
+			},
+			"parameters": {
+				"buffer": 1,
+				"param2": 0,
+				"size": 12,
+				"strength": 0.22
+			},
+			"seed_int": 0,
+			"type": "normal_map2"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

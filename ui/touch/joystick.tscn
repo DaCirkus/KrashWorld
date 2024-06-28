@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/touch/joystick.gd" type="Script" id=1]
+[ext_resource path="res://ui/touch/joystick_area.gd" type="Script" id=2]
+[ext_resource path="res://addons/virtual_joystick/sprites/joystick.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/joystick.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+resource_local_to_scene = true
+radius = 100.0
+
+[node name="Control" type="Control"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 201.0
+margin_bottom = 199.0
+rect_min_size = Vector2( 100, 100 )
+mouse_filter = 2
+script = ExtResource( 1 )
+joy_stick_ratio = 0.521
+extra_margin = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 50.5, 50 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="JoyStick" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color( 0.941176, 0.941176, 0.941176, 1 )
+margin_left = 24.45
+margin_top = 23.95
+margin_right = 76.55
+margin_bottom = 76.05
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
